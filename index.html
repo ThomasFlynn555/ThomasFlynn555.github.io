@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiringApp - Engineering Careers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">HiringApp</h1>
+            <nav class="nav">
+                <button class="nav-tab active" data-tab="tips">Tips</button>
+                <button class="nav-tab" data-tab="electrical">Electrical Engineering</button>
+                <button class="nav-tab" data-tab="mechanical">Mechanical Engineering</button>
+                <button class="nav-tab" data-tab="civil">Civil Engineering</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Tips Tab -->
+            <div class="tab-content active" id="tips">
+                <div class="hero">
+                    <h2>Career Tips for New Graduates</h2>
+                    <p>Essential advice to help you land your first job and build a successful career</p>
+                </div>
+
+                <div class="tips-grid">
+                    <div class="tip-category">
+                        <h3>📝 Resume & Portfolio</h3>
+                        <div class="tip-list">
+                            <div class="tip-item">
+                                <h4>Highlight Relevant Projects</h4>
+                                <p>Include 3-5 projects that demonstrate your technical skills and problem-solving abilities. Use action verbs and quantify your achievements.</p>
+                            </div>
+                            <div class="tip-item">
+                                <h4>Tailor Your Resume</h4>
+                                <p>Customize your resume for each job application. Match keywords from the job description to your experience and skills.</p>
+                            </div>
+                            <div class="tip-item">
+                                <h4>Create a Portfolio</h4>
+                                <p>Build an online portfolio showcasing your best work. Include project descriptions, code samples, and live demos when possible.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-category">
+                        <h3>🎯 Job Search Strategy</h3>
+                        <div class="tip-list">
+                            <div class="tip-item">
+                                <h4>Use Multiple Platforms</h4>
+                                <p>Search on LinkedIn, Indeed, Glassdoor, company websites, and industry-specific job boards. Don't rely on just one platform.</p>
+                            </div>
+                            <div class="tip-item">
+                                <h4>Network Actively</h4>
+                                <p>Attend career fairs, join professional associations, and connect with alumni. Many jobs are filled through networking.</p>
+                            </div>
+                            <div class="tip-item">
+                                <h4>Apply Early and Often</h4>
+                                <p>Apply to 10-15 jobs per week. The more applications you send, the higher your chances of getting interviews.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-category">
+                        <h3>💼 Interview Preparation</h3>
+                        <div class="tip-list">
+                            <div class="tip-item">
+                                <h4>Research the Company</h4>
+                                <p>Learn about the company's mission, recent news, and culture. Prepare thoughtful questions about the role and team.</p>
+                            </div>
+                            <div class="tip-item">
+                                <h4>Practice Technical Questions</h4>
+                                <p>Review common technical interview questions for your field. Practice coding problems, system design, or engineering concepts.</p>
+                            </div>
+                            <div class="tip-item">
+                                <h4>Prepare STAR Stories</h4>
+                                <p>Use the STAR method (Situation, Task, Action, Result) to structure behavioral interview responses with specific examples.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-category">
+                        <h3>💰 Salary Negotiation</h3>
+                        <div class="tip-list">
+                            <div class="tip-item">
+                                <h4>Research Market Rates</h4>
+                                <p>Use salary data from Glassdoor, PayScale, and industry reports to understand what you're worth in your location and field.</p>
+                            </div>
+                            <div class="tip-item">
+                                <h4>Consider Total Compensation</h4>
+                                <p>Look beyond base salary. Consider benefits, stock options, professional development opportunities, and work-life balance.</p>
+                            </div>
+                            <div class="tip-item">
+                                <h4>Practice Your Pitch</h4>
+                                <p>Prepare a clear, confident explanation of why you deserve the salary you're requesting. Focus on your value and unique contributions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-category">
+                        <h3>🚀 Career Growth</h3>
+                        <div class="tip-list">
+                            <div class="tip-item">
+                                <h4>Continue Learning</h4>
+                                <p>Stay updated with industry trends, take online courses, earn certifications, and attend workshops or conferences.</p>
+                            </div>
+                            <div class="tip-item">
+                                <h4>Seek Mentorship</h4>
+                                <p>Find mentors in your field who can provide guidance, advice, and help you navigate your career path.</p>
+                            </div>
+                            <div class="tip-item">
+                                <h4>Build Soft Skills</h4>
+                                <p>Develop communication, leadership, and teamwork skills. These are often as important as technical abilities for career advancement.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-category">
+                        <h3>📊 Industry Insights</h3>
+                        <div class="tip-list">
+                            <div class="tip-item">
+                                <h4>Follow Industry News</h4>
+                                <p>Subscribe to industry publications, follow thought leaders on social media, and join professional groups to stay informed.</p>
+                            </div>
+                            <div class="tip-item">
+                                <h4>Understand Market Trends</h4>
+                                <p>Learn about emerging technologies, market demands, and skill requirements in your field to position yourself strategically.</p>
+                            </div>
+                            <div class="tip-item">
+                                <h4>Build Your Brand</h4>
+                                <p>Create a professional online presence through LinkedIn, GitHub, or a personal website. Share your knowledge and engage with the community.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electrical Engineering Tab -->
+            <div class="tab-content" id="electrical">
+                <div class="hero">
+                    <h2>Electrical Engineering Careers</h2>
+                    <p>Discover average starter salaries and hiring hotspots across the United States</p>
+                </div>
+
+                <div class="dashboard">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>National Average</h3>
+                            <div class="stat-value">$68,000</div>
+                            <div class="stat-label">Starting Salary</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Top State</h3>
+                            <div class="stat-value">California</div>
+                            <div class="stat-label">$78,500 avg</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Job Growth</h3>
+                            <div class="stat-value">+7%</div>
+                            <div class="stat-label">Annual Growth</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Hot Markets</h3>
+                            <div class="stat-value">15</div>
+                            <div class="stat-label">Active States</div>
+                        </div>
+                    </div>
+
+                    <div class="visualization-grid">
+                        <div class="chart-container">
+                            <h3>Average Starting Salaries by State</h3>
+                            <div id="electricalMap" class="map-container"></div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <h3>Top Hiring Hotspots</h3>
+                            <div class="hotspots-list">
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">1</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Silicon Valley, CA</div>
+                                        <div class="hotspot-jobs">2,400+ jobs</div>
+                                        <div class="hotspot-salary">$85,000 avg</div>
+                                    </div>
+                                </div>
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">2</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Austin, TX</div>
+                                        <div class="hotspot-jobs">1,800+ jobs</div>
+                                        <div class="hotspot-salary">$72,000 avg</div>
+                                    </div>
+                                </div>
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">3</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Seattle, WA</div>
+                                        <div class="hotspot-jobs">1,600+ jobs</div>
+                                        <div class="hotspot-salary">$79,000 avg</div>
+                                    </div>
+                                </div>
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">4</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Boston, MA</div>
+                                        <div class="hotspot-jobs">1,400+ jobs</div>
+                                        <div class="hotspot-salary">$76,000 avg</div>
+                                    </div>
+                                </div>
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">5</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Denver, CO</div>
+                                        <div class="hotspot-jobs">1,200+ jobs</div>
+                                        <div class="hotspot-salary">$71,000 avg</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container full-width">
+                        <h3>Salary Distribution by State</h3>
+                        <canvas id="electricalChart"></canvas>
+                    </div>
+
+                    <div class="chart-container full-width">
+                        <h3>Recent Hires (Last 30 Days)</h3>
+                        <div class="recent-hires-container">
+                            <div class="recent-hires-stats">
+                                <div class="hire-stat">
+                                    <span class="hire-number">247</span>
+                                    <span class="hire-label">New Hires</span>
+                                </div>
+                                <div class="hire-stat">
+                                    <span class="hire-number">$72,400</span>
+                                    <span class="hire-label">Average Salary</span>
+                                </div>
+                                <div class="hire-stat">
+                                    <span class="hire-number">89</span>
+                                    <span class="hire-label">Companies</span>
+                                </div>
+                            </div>
+                            <div class="recent-hires-list">
+                                <div class="hire-item">
+                                    <div class="hire-company">Tesla</div>
+                                    <div class="hire-location">Austin, TX</div>
+                                    <div class="hire-salary">$85,000</div>
+                                    <div class="hire-date">2 days ago</div>
+                                </div>
+                                <div class="hire-item">
+                                    <div class="hire-company">Apple</div>
+                                    <div class="hire-location">Cupertino, CA</div>
+                                    <div class="hire-salary">$92,000</div>
+                                    <div class="hire-date">5 days ago</div>
+                                </div>
+                                <div class="hire-item">
+                                    <div class="hire-company">Microsoft</div>
+                                    <div class="hire-location">Seattle, WA</div>
+                                    <div class="hire-salary">$88,000</div>
+                                    <div class="hire-date">1 week ago</div>
+                                </div>
+                                <div class="hire-item">
+                                    <div class="hire-company">Intel</div>
+                                    <div class="hire-location">Hillsboro, OR</div>
+                                    <div class="hire-salary">$78,000</div>
+                                    <div class="hire-date">1 week ago</div>
+                                </div>
+                                <div class="hire-item">
+                                    <div class="hire-company">SpaceX</div>
+                                    <div class="hire-location">Hawthorne, CA</div>
+                                    <div class="hire-salary">$95,000</div>
+                                    <div class="hire-date">2 weeks ago</div>
+                                </div>
+                            </div>
+                            <div class="recent-hires-footer">
+                                <button class="load-more-btn" data-field="electrical">Load More Recent Hires</button>
+                                <p class="data-note">*Data updated daily from job posting platforms and company announcements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mechanical Engineering Tab -->
+            <div class="tab-content" id="mechanical">
+                <div class="hero">
+                    <h2>Mechanical Engineering Careers</h2>
+                    <p>Discover average starter salaries and hiring hotspots across the United States</p>
+                </div>
+
+                <div class="dashboard">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>National Average</h3>
+                            <div class="stat-value">$65,000</div>
+                            <div class="stat-label">Starting Salary</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Top State</h3>
+                            <div class="stat-value">California</div>
+                            <div class="stat-label">$75,500 avg</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Job Growth</h3>
+                            <div class="stat-value">+5%</div>
+                            <div class="stat-label">Annual Growth</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Hot Markets</h3>
+                            <div class="stat-value">18</div>
+                            <div class="stat-label">Active States</div>
+                        </div>
+                    </div>
+
+                    <div class="visualization-grid">
+                        <div class="chart-container">
+                            <h3>Average Starting Salaries by State</h3>
+                            <div id="mechanicalMap" class="map-container"></div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <h3>Top Hiring Hotspots</h3>
+                            <div class="hotspots-list">
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">1</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Detroit, MI</div>
+                                        <div class="hotspot-jobs">2,100+ jobs</div>
+                                        <div class="hotspot-salary">$68,000 avg</div>
+                                    </div>
+                                </div>
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">2</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Houston, TX</div>
+                                        <div class="hotspot-jobs">1,800+ jobs</div>
+                                        <div class="hotspot-salary">$72,000 avg</div>
+                                    </div>
+                                </div>
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">3</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Los Angeles, CA</div>
+                                        <div class="hotspot-jobs">1,600+ jobs</div>
+                                        <div class="hotspot-salary">$78,000 avg</div>
+                                    </div>
+                                </div>
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">4</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Seattle, WA</div>
+                                        <div class="hotspot-jobs">1,400+ jobs</div>
+                                        <div class="hotspot-salary">$76,000 avg</div>
+                                    </div>
+                                </div>
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">5</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Chicago, IL</div>
+                                        <div class="hotspot-jobs">1,200+ jobs</div>
+                                        <div class="hotspot-salary">$69,000 avg</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container full-width">
+                        <h3>Salary Distribution by State</h3>
+                        <canvas id="mechanicalChart"></canvas>
+                    </div>
+
+                    <div class="chart-container full-width">
+                        <h3>Recent Hires (Last 30 Days)</h3>
+                        <div class="recent-hires-container">
+                            <div class="recent-hires-stats">
+                                <div class="hire-stat">
+                                    <span class="hire-number">189</span>
+                                    <span class="hire-label">New Hires</span>
+                                </div>
+                                <div class="hire-stat">
+                                    <span class="hire-number">$67,200</span>
+                                    <span class="hire-label">Average Salary</span>
+                                </div>
+                                <div class="hire-stat">
+                                    <span class="hire-number">76</span>
+                                    <span class="hire-label">Companies</span>
+                                </div>
+                            </div>
+                            <div class="recent-hires-list">
+                                <div class="hire-item">
+                                    <div class="hire-company">Ford Motor Company</div>
+                                    <div class="hire-location">Dearborn, MI</div>
+                                    <div class="hire-salary">$72,000</div>
+                                    <div class="hire-date">3 days ago</div>
+                                </div>
+                                <div class="hire-item">
+                                    <div class="hire-company">Boeing</div>
+                                    <div class="hire-location">Seattle, WA</div>
+                                    <div class="hire-salary">$78,000</div>
+                                    <div class="hire-date">1 week ago</div>
+                                </div>
+                                <div class="hire-item">
+                                    <div class="hire-company">Tesla</div>
+                                    <div class="hire-location">Fremont, CA</div>
+                                    <div class="hire-salary">$85,000</div>
+                                    <div class="hire-date">1 week ago</div>
+                                </div>
+                                <div class="hire-item">
+                                    <div class="hire-company">General Motors</div>
+                                    <div class="hire-location">Detroit, MI</div>
+                                    <div class="hire-salary">$70,000</div>
+                                    <div class="hire-date">2 weeks ago</div>
+                                </div>
+                                <div class="hire-item">
+                                    <div class="hire-company">Caterpillar</div>
+                                    <div class="hire-location">Peoria, IL</div>
+                                    <div class="hire-salary">$68,000</div>
+                                    <div class="hire-date">2 weeks ago</div>
+                                </div>
+                            </div>
+                            <div class="recent-hires-footer">
+                                <button class="load-more-btn" data-field="mechanical">Load More Recent Hires</button>
+                                <p class="data-note">*Data updated daily from job posting platforms and company announcements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Civil Engineering Tab -->
+            <div class="tab-content" id="civil">
+                <div class="hero">
+                    <h2>Civil Engineering Careers</h2>
+                    <p>Discover average starter salaries and hiring hotspots across the United States</p>
+                </div>
+
+                <div class="dashboard">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>National Average</h3>
+                            <div class="stat-value">$58,000</div>
+                            <div class="stat-label">Starting Salary</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Top State</h3>
+                            <div class="stat-value">California</div>
+                            <div class="stat-label">$68,500 avg</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Job Growth</h3>
+                            <div class="stat-value">+8%</div>
+                            <div class="stat-label">Annual Growth</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Hot Markets</h3>
+                            <div class="stat-value">22</div>
+                            <div class="stat-label">Active States</div>
+                        </div>
+                    </div>
+
+                    <div class="visualization-grid">
+                        <div class="chart-container">
+                            <h3>Average Starting Salaries by State</h3>
+                            <div id="civilMap" class="map-container"></div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <h3>Top Hiring Hotspots</h3>
+                            <div class="hotspots-list">
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">1</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">New York, NY</div>
+                                        <div class="hotspot-jobs">2,800+ jobs</div>
+                                        <div class="hotspot-salary">$72,000 avg</div>
+                                    </div>
+                                </div>
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">2</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Los Angeles, CA</div>
+                                        <div class="hotspot-jobs">2,200+ jobs</div>
+                                        <div class="hotspot-salary">$75,000 avg</div>
+                                    </div>
+                                </div>
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">3</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Chicago, IL</div>
+                                        <div class="hotspot-jobs">1,900+ jobs</div>
+                                        <div class="hotspot-salary">$65,000 avg</div>
+                                    </div>
+                                </div>
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">4</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Houston, TX</div>
+                                        <div class="hotspot-jobs">1,700+ jobs</div>
+                                        <div class="hotspot-salary">$68,000 avg</div>
+                                    </div>
+                                </div>
+                                <div class="hotspot-item">
+                                    <div class="hotspot-rank">5</div>
+                                    <div class="hotspot-info">
+                                        <div class="hotspot-name">Phoenix, AZ</div>
+                                        <div class="hotspot-jobs">1,500+ jobs</div>
+                                        <div class="hotspot-salary">$62,000 avg</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container full-width">
+                        <h3>Salary Distribution by State</h3>
+                        <canvas id="civilChart"></canvas>
+                    </div>
+
+                    <div class="chart-container full-width">
+                        <h3>Recent Hires (Last 30 Days)</h3>
+                        <div class="recent-hires-container">
+                            <div class="recent-hires-stats">
+                                <div class="hire-stat">
+                                    <span class="hire-number">312</span>
+                                    <span class="hire-label">New Hires</span>
+                                </div>
+                                <div class="hire-stat">
+                                    <span class="hire-number">$61,800</span>
+                                    <span class="hire-label">Average Salary</span>
+                                </div>
+                                <div class="hire-stat">
+                                    <span class="hire-number">124</span>
+                                    <span class="hire-label">Companies</span>
+                                </div>
+                            </div>
+                            <div class="recent-hires-list">
+                                <div class="hire-item">
+                                    <div class="hire-company">AECOM</div>
+                                    <div class="hire-location">Los Angeles, CA</div>
+                                    <div class="hire-salary">$72,000</div>
+                                    <div class="hire-date">2 days ago</div>
+                                </div>
+                                <div class="hire-item">
+                                    <div class="hire-company">Jacobs Engineering</div>
+                                    <div class="hire-location">New York, NY</div>
+                                    <div class="hire-salary">$68,000</div>
+                                    <div class="hire-date">5 days ago</div>
+                                </div>
+                                <div class="hire-item">
+                                    <div class="hire-company">Fluor Corporation</div>
+                                    <div class="hire-location">Houston, TX</div>
+                                    <div class="hire-salary">$65,000</div>
+                                    <div class="hire-date">1 week ago</div>
+                                </div>
+                                <div class="hire-item">
+                                    <div class="hire-company">Bechtel</div>
+                                    <div class="hire-location">San Francisco, CA</div>
+                                    <div class="hire-salary">$78,000</div>
+                                    <div class="hire-date">1 week ago</div>
+                                </div>
+                                <div class="hire-item">
+                                    <div class="hire-company">Kiewit Corporation</div>
+                                    <div class="hire-location">Omaha, NE</div>
+                                    <div class="hire-salary">$63,000</div>
+                                    <div class="hire-date">2 weeks ago</div>
+                                </div>
+                            </div>
+                            <div class="recent-hires-footer">
+                                <button class="load-more-btn" data-field="civil">Load More Recent Hires</button>
+                                <p class="data-note">*Data updated daily from job posting platforms and company announcements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 HiringApp. Helping college grads find their dream careers.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
